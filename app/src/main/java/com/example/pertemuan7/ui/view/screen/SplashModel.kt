@@ -39,7 +39,7 @@ fun SplashView(
                 id = R.drawable.umy
             ),
             contentDescription = "",
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(500.dp)
         )
         Spacer(modifier = Modifier.padding(16.dp))
         Button(
