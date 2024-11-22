@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pertemuan7.Model.Mahasiswa
+import com.example.pertemuan7.Model.RencanaStudy
 import com.example.pertemuan7.R
 
 //@Preview(showBackground = true)
