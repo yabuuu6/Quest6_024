@@ -18,6 +18,7 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -182,14 +183,24 @@ fun MahasiswaFormView(
                     horizontalArrangement =
                     Arrangement.SpaceEvenly
                 ){
-                    Button(onClick = {
-                        onBackButtonClicked()
-                    }) {
-                        Text(text = "Kembali")
-                    }
-                    Button(onClick = {
-                        onSubmitButtonClicked(listData)
-                    }) {
+                    Button(
+                    onClick = { onBackButtonClicked() },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = colorResource(id = R.color.primary),
+                        contentColor = Color.White
+                    ),
+                    modifier = Modifier.padding(8.dp)
+                ) {
+                    Text(text = "Kembali")
+                }
+                    Button(
+                        onClick = { onSubmitButtonClicked(listData) },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorResource(id = R.color.primary),
+                            contentColor = Color.White
+                        ),
+                        modifier = Modifier.padding(8.dp)
+                    ) {
                         Text(text = "Simpan")
                     }
                 }
