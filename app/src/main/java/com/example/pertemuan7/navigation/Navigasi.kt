@@ -30,8 +30,7 @@ fun MahasiswaApp(
     mahasiswaViewModel: MahasiswaViewModel = viewModel(),
     RencanaStudyViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
-)
-{
+) {
     val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
     val rencanaStudiUiState = RencanaStudyViewModel.krsStateUi.collectAsState().value
 
@@ -44,11 +43,22 @@ fun MahasiswaApp(
     {
         composable(
             route = Halaman.Splash.name
-        ){
-            SplashView (
+        ) {
+            SplashView(
                 onMulaiButton = {
                     navController.navigate(Halaman.Mahasiswa.name)
                 })
         }
 
+
+        composable(route = Halaman.Mahasiswa.name) {
+            MahasiswaFormView(
+                onSubmitButtonClicked = {
+                    mahasiswaViewModel.saveDataMahasiswa(it)
+                    navController.navigate(Halaman.Peminatan.name)
+                },
+                onBackButtonClicked = { navController.popBackStack() }
+            )
+        }
+    }
 }
